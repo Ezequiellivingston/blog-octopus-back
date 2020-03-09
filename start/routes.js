@@ -17,7 +17,11 @@
 const Route = use("Route");
 
 Route.get("/", () => {
-  return { greeting: "Hello world in JSON" };
+  return { greeting: "Bienvenido a blog Octopus" };
+});
+
+Route.get("/api/v1", () => {
+  return { greeting: "Bienvenido a blog Octopus" };
 });
 
 Route.post("/api/v1/registro", "UserController.register");
