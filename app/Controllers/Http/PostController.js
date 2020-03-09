@@ -34,9 +34,9 @@ class PostController {
     let posts = await Database.raw(`
       SELECT 
         *,
-          (select count(*) from octopus.likes as l where l.post_id = p.id) as likes,
-          (select count(*) from octopus.points as l where l.post_id = p.id) as points
-      FROM octopus.posts as p
+          (select count(*) from likes as l where l.post_id = p.id) as likes,
+          (select count(*) from points as l where l.post_id = p.id) as points
+      FROM posts as p
       ORDER BY p.created_at DESC
       LIMIT 20
       OFFSET ${offset};
